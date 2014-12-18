@@ -7,3 +7,9 @@ h1 {
     font-size: 69px;
     padding: 36px;
 }
+
+td {
+    background-color: #E3D6C6;
+    color: #6D635D;
+    text-shadow: 1px 1px 1px #FFFFFF;
+}
