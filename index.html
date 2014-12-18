@@ -27,7 +27,10 @@
                 <div class="col-xs-10 col-xs-offset-1">
                     <table class="table table-bordered text-center" initial-number-limit="10">
                         <tr ng-repeat="numberY in numbers">
-                            <td ng-repeat="numberX in numbers">
+                            <td ng-repeat="numberX in numbers"
+                                ng-mouseover="setActiveFactors(numberX, numberY)"
+                                ng-mouseleave="clearActiveFactors()"
+                                ng-class="{hover: matchesFactors(numberX, numberY)}">
                                 {{ compute(numberX, numberY) }}
                             </td>
                         </tr>

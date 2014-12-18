@@ -17,4 +17,19 @@ angular.module('multiplyApp', [])
         $scope.compute = function(x,y) {
             return x * y;
         };
+        
+        var activeFactorX, activeFactorY;
+        
+        $scope.setActiveFactors = function(x,y) {
+            activeFactorX = x;
+            activeFactorY = y;
+        };
+        
+        $scope.matchesFactors = function(x,y) {
+            return x === activeFactorX || y === activeFactorY;
+        };
+        
+        $scope.clearActiveFactors = function () {
+            activeFactorX = activeFactorY = null;
+        };
     });
