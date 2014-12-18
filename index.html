@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" ng-app='multiplyApp'>
+<head>
+    <meta charset="UTF-8">
+    <title>Multiplication Table</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/master.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
+    <script src="js/master.js"></script>
+    
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h1>Multiplication Table</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <table ng-controller="MultiplicationCtrl">
+                    <tr ng-repeat="numberY in numbers">
+                        <td ng-repeat="numberX in numbers">
+                            {{ numberX * numberY }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
