@@ -16,6 +16,17 @@
                 <h1>Multiplication Table</h1>
             </div>
         </div>
+        <div class="row" ng-controller="DisplayCtrl">
+            <div class="col-xs-10 col-xs-offset-1">
+            <div ng-if="content">
+                The value you have selected to display is: {{ content }}
+            </div>
+            <div ng-if="!content">
+                You have not selected a value to display
+            </div>
+            </div>
+        </div>
+        <br />
         <div ng-controller="MultiplicationCtrl">
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1">
@@ -28,8 +39,9 @@
                     <table class="table table-bordered text-center" initial-number-limit="10">
                         <tr ng-repeat="numberY in numbers">
                             <td ng-repeat="numberX in numbers"
-                                ng-mouseover="setActiveFactors(numberX, numberY)"
+                                ng-click="setActiveNumber(compute(numberX, numberY))"
                                 ng-mouseleave="clearActiveFactors()"
+                                ng-mouseover="setActiveFactors(numberX, numberY)"
                                 ng-class="{hover: matchesFactors(numberX, numberY)}">
                                 {{ compute(numberX, numberY) }}
                             </td>

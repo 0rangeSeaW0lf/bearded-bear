@@ -1,5 +1,5 @@
 angular.module('multiplyApp', [])
-    .controller('MultiplicationCtrl', function($scope, $attrs) {
+    .controller('MultiplicationCtrl', function($scope, $attrs, $rootScope) {
         function populateNumbers(x) {
             var numbers = [];
             for(var i=0; i < x; i++) {
@@ -32,4 +32,13 @@ angular.module('multiplyApp', [])
         $scope.clearActiveFactors = function () {
             activeFactorX = activeFactorY = null;
         };
+        
+        $scope.setActiveNumber = function(number){
+            $rootScope.$broadcast('displayData', number);
+        };
+    })
+    .controller('DisplayCtrl', function ($scope) {
+        $scope.$on('displayData', function(event, data){
+           $scope.content = data; 
+        });
     });
